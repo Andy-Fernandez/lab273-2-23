@@ -20,6 +20,7 @@ public class servidorTCP {
         // esperando a que el cliente se conecte
         System.out.println("Cliente conectado");
 
+        // Pedir Dato
         DataInputStream entrada = new DataInputStream(sock.getInputStream());
         DataOutputStream salida = new DataOutputStream(sock.getOutputStream());
 

@@ -10,8 +10,8 @@ import java.io.DataOutputStream;
 public class clienteTCP {
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
-        int puerto = 7777;
-        String host = "192.168.16.5";
+        int puerto = 49152;
+        String host = "localhost";
 
         Socket sock = new Socket(host, puerto);
 

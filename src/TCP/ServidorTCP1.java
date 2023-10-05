@@ -4,9 +4,12 @@ import java.io.*;
 import java.net.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Scanner;
 
 public class ServidorTCP1 {
     public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+
         if (args.length != 1) {
             System.out.println("Uso: java ServidorTCP <puerto>");
             return;

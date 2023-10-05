@@ -20,18 +20,24 @@ public class clienteTCP {
         DataInputStream entrada = new DataInputStream(sock.getInputStream());
         DataOutputStream salida = new DataOutputStream(sock.getOutputStream());
 
-        //Ingrasar solicitud
-        System.out.println("Ingrese fecha: ");
-        String fechaCliente = sc.nextLine();
-        salida.writeUTF(fechaCliente);  // Enviar la fecha
+        while (true) {
+            //Ingrasar solicitud
+            System.out.println("Ingrese fecha: ");
+            String fechaCliente = sc.nextLine();
+            salida.writeUTF(fechaCliente);  // Enviar la fecha
 
-        System.out.println("Ingrese número de placa: ");
-        String placa = sc.nextLine();
-        salida.writeUTF(placa);  // Enviar la placa
+            if (fechaCliente.equals("salir")) {
+                System.out.println("Cerrando conexión");
+                break;
+            }
+            System.out.println("Ingrese número de placa: ");
+            String placa = sc.nextLine();
+            salida.writeUTF(placa);  // Enviar la placa
 
-        //Recibir respuesta
-        String respuesta = entrada.readUTF();  // Recibir respuesta del servidor
-        System.out.println("Respuesta recibida: " + respuesta);
+            //Recibir respuesta
+            String respuesta = entrada.readUTF();  // Recibir respuesta del servidor
+            System.out.println("Respuesta recibida: " + respuesta);
+        }
 
     }
 }
